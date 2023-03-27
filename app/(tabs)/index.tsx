@@ -1,9 +1,20 @@
+import React from "react";
 import { StyleSheet } from "react-native";
 import EditScreenInfo from "../../components/EditScreenInfo";
+import { LoadingIndicator } from "../../components/LoadingIndicator";
 import { Text, View } from "../../components/Themed";
+import { useDeck } from "../../hooks";
 
 export default function FileScreen() {
-  return (
+  const { isLoading, loadDecks } = useDeck();
+
+  React.useEffect(() => {
+    loadDecks();
+  }, []);
+
+  return isLoading ? (
+    <LoadingIndicator />
+  ) : (
     <View style={styles.container}>
       <Text style={styles.title}>Files</Text>
       <View
