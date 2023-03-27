@@ -23,9 +23,9 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="file"
         options={{
-          title: "Tab One",
+          title: "Files",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -44,9 +44,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="flashcard"
         options={{
-          title: "Tab Two",
+          title: "Flashcards",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
